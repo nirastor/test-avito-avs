@@ -5,7 +5,7 @@ import Banner from './banner';
 
 export default class Ui {
   constructor() {
-    this.bannerEl = document.querySelector('.banner');
+    this.bannerEl = document.querySelector('.banner-wrapper');
     this.bannerConfig = new BannerConfig();
     this.banner = new Banner(this.bannerEl, this.bannerConfig);
 
@@ -21,6 +21,8 @@ export default class Ui {
     this.formColorpicker = new FormColorpicker(this.formColorEl);
 
     this.textarea = document.querySelector('.textarea');
+    this.linkInputEl = document.querySelector('.input-link');
+    this.imageInputEl = document.querySelector('.input-image');
 
     this.state = {
       gradientSelectorIsOpen: false,
@@ -69,6 +71,11 @@ export default class Ui {
       e.preventDefault();
       this.onTextChange();
     });
+
+    this.linkInputEl.addEventListener('input', (e) => {
+      e.preventDefault();
+      this.onLinkInput();
+    });
   }
 
   toggleGradientControls() {
@@ -108,17 +115,22 @@ export default class Ui {
     } else {
       this.bannerConfig.gradientColor = color;
     }
-    this.banner.redraw();
-  }
-
-  onTextChange() {
-    this.bannerConfig.text = this.textarea.value;
-    this.banner.redraw();
+    this.banner.redrawColor();
   }
 
   closeColorpicker() {
     this.state.colorpicker.isOpen = false;
     this.state.colorpicker.openFor = null;
     this.formColorpicker.closeForm();
+  }
+
+  onTextChange() {
+    this.bannerConfig.text = this.textarea.value;
+    this.banner.redrawText();
+  }
+
+  onLinkInput() {
+    this.bannerConfig.url = this.linkInputEl.value;
+    this.banner.redraw();
   }
 }

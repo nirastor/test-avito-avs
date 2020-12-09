@@ -1,5 +1,6 @@
 .form-color {
   position: absolute;
+  z-index: 999;
   top: 25%;
   left: 480px;
   border-radius: 15px;

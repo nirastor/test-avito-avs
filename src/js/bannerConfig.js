@@ -1,6 +1,6 @@
 export default class BannerConfig {
   constructor() {
-    this.url = null;
+    this.url = 'https://www.avito.ru/';
     this.backgroundImageUrl = null;
     this.mainColor = '#35b116';
     this.gradientColor = null;
