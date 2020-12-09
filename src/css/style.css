@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  font-family: Roboto, "Segoe UI", Arial, sans-serif;
+  background-color: #ccc;
+  display: flex;
+}
+
+.controls {
+  min-height: 100vh;
+  background-color: #444;
+  color: white;
+  width: 25%;
+  min-width: 480px;
+  padding: 40px;
+  box-shadow: 0px 0px 7px 4px #111;
+}
+
+.h1 {
+  margin-bottom: 35px;
+  padding-left: 11px;
+  padding-left: 11px;
+}
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #888;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: all .3s ease;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: white;
+  transition: all .3s ease;
+}
+
+.input:focus::placeholder,
+.textarea:focus::placeholder {
+  opacity: 0;
+}
+
+.input:hover,
+.textarea:hover {
+  border-color: orange;
+}
+
+.input:hover::placeholder,
+.textarea:hover::placeholder {
+  color: orange;
+}
+
+.color-wrapper {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.color {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.color--gradient {
+  margin-top: 20px;
+}
+
+.color-pic {
+  width: 30px;
+  height: 30px;
+  background-color: #35b116;
+  border: 1px solid white;
+  border-radius: 6px;
+  margin-right: 10px;
+  transition: all .3s ease;
+}
+
+.color-text {
+  color: #ccc;
+  margin-right: 20px;
+  transition: all .3s ease;
+}
+
+.color-select-btn {
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: all .3s ease;
+}
+
+.color:hover .color-pic,
+.color:hover .color-text,
+.color:hover .color-select-btn {
+  border-color: orange;
+  color: orange;
+}
+
+.gradient-open-btn {
+  border-bottom: 1px dashed white;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.gradient-open-btn:hover {
+  border-color: orange;
+  color: orange;
+}
+
+.display-none {
+  display: none;
+}

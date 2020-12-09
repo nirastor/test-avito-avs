@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BannerMaker</title>
+</head>
+<body>
+    <div class="app">
+        <div class="controls">
+            <h1 class="h1">BannerMaker</h1>
+            <form action="">
+                <input class="input" type="text" placeholder="Ссылка с баннера">
+                <input class="input" type="text" placeholder="Ссылка на изображение">
+                <div class="color-wrapper">
+                    <div class="color color--main">
+                        <div class="color-pic">&nbsp;</div>
+                        <div class="color-text">#35b116</div>
+                        <div class="color-select-btn">Выбрать цвет</div>
+                    </div>
+                    <div class="color color--gradient display-none">
+                        <div class="color-pic">&nbsp;</div>
+                        <div class="color-text">#35b116</div>
+                        <div class="color-select-btn">Выбрать цвет</div>
+                    </div>
+                    <div class="form-row">
+                        <span class="gradient-open-btn">Добавить градиент</span>
+                    </div>
+                </div>
+                <textarea
+                    class="textarea"
+                    name="banner-text"
+                    cols="30"
+                    rows="3"
+                    placeholder="Текст на баннере"></textarea>
+            </form>
+        </div>
+        
+        <div class="preview">
+            <div class="banner">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
