@@ -6,7 +6,7 @@
 # Тестовое в avito-AVS
 
 ## Сборка  
-https://nirastor.github.io/b4w
+https://nirastor.github.io/test-avito-avs/
 
 ## Комментарии к реализации
 - Сохранение в localstorage — при каждом изменении. Загрузка из хранилища при загрузке страницы
