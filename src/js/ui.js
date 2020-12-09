@@ -19,6 +19,9 @@ export default class Ui {
 
     this.formColorEl = document.querySelector('.form-color');
     this.formColorpicker = new FormColorpicker(this.formColorEl);
+
+    this.textarea = document.querySelector('.textarea');
+
     this.state = {
       gradientSelectorIsOpen: false,
       colorpicker: {
@@ -61,6 +64,11 @@ export default class Ui {
       e.preventDefault();
       this.openColorpicker(this.colorPickerState.gradient);
     });
+
+    this.textarea.addEventListener('input', (e) => {
+      e.preventDefault();
+      this.onTextChange();
+    });
   }
 
   toggleGradientControls() {
@@ -100,6 +108,11 @@ export default class Ui {
     } else {
       this.bannerConfig.gradientColor = color;
     }
+    this.banner.redraw();
+  }
+
+  onTextChange() {
+    this.bannerConfig.text = this.textarea.value;
     this.banner.redraw();
   }
 
