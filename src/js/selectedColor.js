@@ -1,8 +1,9 @@
 export default class SelectedColor {
-  constructor(colorContainer) {
+  constructor(colorContainer, name) {
     this.elContainerelContainer = colorContainer;
     this.elColorColor = this.elContainerelContainer.querySelector('.color-pic');
     this.elColorText = this.elContainerelContainer.querySelector('.color-text');
+    this.name = name;
   }
 
   setColor(color) {

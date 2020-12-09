@@ -6,7 +6,7 @@ export default class App {
   }
 
   init() {
-    this.ui.initListeners();
+    this.ui.init();
   }
 }
 
