@@ -76,6 +76,16 @@ export default class Ui {
       e.preventDefault();
       this.onLinkInput();
     });
+
+    this.imageInputEl.addEventListener('input', (e) => {
+      e.preventDefault();
+      this.onImageInput();
+    });
+
+    this.imageInputEl.addEventListener('focus', (e) => {
+      e.preventDefault();
+      this.onImageInputFocus();
+    });
   }
 
   toggleGradientControls() {
@@ -131,6 +141,17 @@ export default class Ui {
 
   onLinkInput() {
     this.bannerConfig.url = this.linkInputEl.value;
-    this.banner.redraw();
+    this.banner.redrawLink();
+  }
+
+  onImageInput() {
+    this.bannerConfig.backgroundImageUrl = this.imageInputEl.value;
+    this.banner.redrawImage();
+  }
+
+  onImageInputFocus() {
+    if (this.imageInputEl.value) {
+      this.banner.redrawImage();
+    }
   }
 }

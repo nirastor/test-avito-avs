@@ -29,7 +29,8 @@ export default class Banner {
 
   redrawImage() {
     if (this.bannerConfig.backgroundImageUrl) {
-      this.bannerEl.style.background.url = this.bannerConfig.backgroundImageUrl;
+      this.bannerEl.style.backgroundImage = `url("${this.bannerConfig.backgroundImageUrl}")`;
+      // this.bannerEl.style.backgroundColor = 'transparent';
     }
   }
 
