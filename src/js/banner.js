@@ -7,6 +7,46 @@ export default class Banner {
     this.bannerConfig = bannerConfig;
   }
 
+  createHTML() {
+    const tbc = this.bannerConfig;
+
+    const wrapperOpen = '<div class="banner-wrapper">';
+    const wrapperClose = '</div>';
+    let bannerOpen = '<div class="banner">';
+    const bannerClose = '</div>';
+
+    let linkOpen = '';
+    let linkClose = '';
+    if (tbc.url) {
+      linkOpen = `<a href="${tbc.url}" target="_blank" class="banner-link">`;
+      linkClose = '</a>';
+    }
+
+    const styleOpener = '<div class="banner" style="background: ';
+
+    if (tbc.backgroundImageUrl) {
+      const sImg = `url("${tbc.backgroundImageUrl}")`;
+      const sImgClose = ' center center / cover no-repeat;">';
+      bannerOpen = styleOpener + sImg + sImgClose;
+    } else if (tbc.gradientColor) {
+      const sGrad = `linear-gradient(${tbc.mainColor}, ${tbc.gradientColor});">`;
+      bannerOpen = styleOpener + sGrad;
+    } else {
+      bannerOpen = `<div class="banner" style="background-color: ${tbc.mainColor};">`;
+    }
+
+    const textWithBr = this.bannerConfig.text.replaceAll('\n', '<br>');
+    const bannerTextFull = `<div class="banner-text">${textWithBr}</div>`;
+
+    return wrapperOpen
+      + linkOpen
+        + bannerOpen
+          + bannerTextFull
+        + bannerClose
+      + linkClose
+    + wrapperClose;
+  }
+
   redraw() {
     this.redrawColor();
     this.redrawImage();

@@ -218,7 +218,7 @@ export default class App {
 
   exportHtml() {
     console.log('export html');
-    const text = JSON.stringify(this.bannerConfig);
+    const text = this.banner.createHTML();
     navigator.clipboard.writeText(text)
       .then(() => {
         this.showSuccessCopy(this.buttonHtml);
