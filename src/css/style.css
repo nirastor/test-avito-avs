@@ -68,6 +68,19 @@
   margin-bottom: 20px;
 }
 
+.input:focus,
+.button:focus,
+.textarea:focus {
+  outline: none;
+  border-color: orange;
+}
+
+.active {
+  outline: none;
+  border-color: orange;
+  color: orange;
+}
+
 .input::placeholder,
 .textarea::placeholder {
   color: white;

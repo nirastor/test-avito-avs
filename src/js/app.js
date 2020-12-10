@@ -197,9 +197,12 @@ export default class App {
     if (btn.innerText !== bText.copied) {
       // eslint-disable-next-line no-param-reassign
       btn.innerText = bText.copied;
+      btn.classList.add('active');
       setTimeout(() => {
         // eslint-disable-next-line no-param-reassign
         btn.innerText = bText[btn.dataset.textId];
+        btn.classList.remove('active');
+        btn.blur();
       }, 1500);
     }
   }
