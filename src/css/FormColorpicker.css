@@ -10,15 +10,8 @@
   box-shadow: 0px 0px 7px 4px #111;
 }
 
-.button {
-  color: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: #444444;
-  font-size: 18px;
-  padding: 0 15px;
-  line-height: 40px;
-  transition: all .3s ease;
+.form-color-buttons-row {
+  display: flex;
 }
 
 .button-color-confirm {

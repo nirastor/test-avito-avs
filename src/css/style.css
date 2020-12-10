@@ -33,6 +33,19 @@
   padding-left: 11px;
 }
 
+.button {
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  line-height: 40px;
+  background-color: #444444;
+  font-size: 18px;
+  padding: 0 15px;
+  transition: all .3s ease;
+  display: block;
+  cursor: pointer;
+}
+
 .input,
 .textarea {
   display: block;
@@ -45,6 +58,10 @@
   font-size: 16px;
   border-radius: 10px;
   transition: all .3s ease;
+}
+
+.textarea {
+  margin-bottom: 40px;
 }
 
 .form-row {
@@ -105,10 +122,8 @@
 }
 
 .color-select-btn {
-  padding: 5px;
-  border: 1px solid white;
-  border-radius: 10px;
   transition: all .3s ease;
+  font-size: 16px;
 }
 
 .color:hover .color-pic,
@@ -156,4 +171,15 @@
 .banner-link {
   display: block;
   text-decoration: none;
+}
+
+.button-form {
+  margin-bottom: 20px;
+  width: 220px;
+  text-align: left;
+}
+
+.button-form:hover {
+  border-color: orange;
+  color: orange;
 }
