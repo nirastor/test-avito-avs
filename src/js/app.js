@@ -1,4 +1,5 @@
-/* eslint-disable no-console */
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 import FormColorpicker from './formColorpicker';
 import SelectedColor from './selectedColor';
 import BannerConfig from './bannerConfig';
@@ -9,6 +10,9 @@ export default class App {
     this.bannerEl = document.querySelector('.banner-wrapper');
     this.bannerConfig = new BannerConfig();
     this.banner = new Banner(this.bannerEl, this.bannerConfig);
+
+    this.saveAs = saveAs;
+    this.domtoimage = domtoimage;
 
     this.formControls = document.querySelector('.form-controls');
 
@@ -188,8 +192,14 @@ export default class App {
   }
 
   exportPng() {
-    console.log('export png');
-    console.log(this.state.colorpicker.isOpen);
+    domtoimage.toBlob(this.bannerEl)
+      .then((blob) => {
+        window.saveAs(blob, 'banner.png');
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error('oops, something went wrong in export PNG!', err);
+      });
   }
 
   showSuccessCopy(btn) {
@@ -208,26 +218,26 @@ export default class App {
   }
 
   exportJson() {
-    console.log('export json');
     const text = JSON.stringify(this.bannerConfig);
     navigator.clipboard.writeText(text)
       .then(() => {
         this.showSuccessCopy(this.buttonJson);
       })
       .catch((err) => {
-        console.log('Something went wrong', err);
+        // eslint-disable-next-line no-console
+        console.log('Something went wrong in export JSON', err);
       });
   }
 
   exportHtml() {
-    console.log('export html');
     const text = this.banner.createHTML();
     navigator.clipboard.writeText(text)
       .then(() => {
         this.showSuccessCopy(this.buttonHtml);
       })
       .catch((err) => {
-        console.log('Something went wrong', err);
+        // eslint-disable-next-line no-console
+        console.log('Something went wrong in export HTML', err);
       });
   }
 }
