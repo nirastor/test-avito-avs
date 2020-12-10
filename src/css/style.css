@@ -140,6 +140,9 @@
   padding: 25px;
   padding-top: 215px;
   position: relative;
+  /* background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
 }
 
 .banner-text {
