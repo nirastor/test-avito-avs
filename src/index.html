@@ -9,7 +9,7 @@
     <div class="app">
         <div class="controls">
             <h1 class="h1">BannerMaker</h1>
-            <form action="">
+            <form class="form-controls" action="">
                 <input class="input input-link" type="text" placeholder="Ссылка с баннера">
                 <input class="input input-image" type="text" placeholder="Ссылка на изображение">
                 <div class="color-wrapper">
@@ -34,9 +34,9 @@
                     rows="3"
                     placeholder="Текст на баннере"></textarea>
                 <div class="form-buttons">
-                    <button class="button button-form js-btn-png">Загрузить PNG</button>
-                    <button class="button button-form js-btn-html">Копировать HTML</button>
-                    <button class="button button-form js-btn-json">Копировать настройки</button>
+                    <button class="button button-form js-btn-png" data-text-id="pngBtn">Загрузить PNG</button>
+                    <button class="button button-form js-btn-html" data-text-id="htmlBtn">Копировать HTML</button>
+                    <button class="button button-form js-btn-json" data-text-id="jsonBtn">Копировать настройки</button>
                 </div>
             </form>
             <div class="form form-color display-none">
