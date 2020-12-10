@@ -1,6 +1,7 @@
 dist
 doc
 .idea
+testexport
 
 # Logs
 logs
